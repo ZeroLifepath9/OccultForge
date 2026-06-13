@@ -1,0 +1,22 @@
+# Never commit secrets as files (use Render Environment instead)
+JWT_SECRET
+XAI_API_KEY
+.env
+
+backend/.venv/
+backend/occult_chart.db
+backend/**/__pycache__/
+backend/.env
+frontend/node_modules/
+frontend/.next/
+*.pyc
+.DS_Store
+
+# Generated upload trees (re-created by scripts/flatten-for-render-upload.ps1)
+occult-forge-FLAT-UPLOAD/
+occult-forge-GITHUB-UPLOAD/
+
+# Local dbs and caches at any level
+*.db
+**/__pycache__/
+**/*.pyc

@@ -1,0 +1,30 @@
+# Render Blueprint — Occult Forge
+# Push full repo to GitHub, then connect Blueprint or set same commands manually.
+
+services:
+  - type: web
+    name: occult-forge
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
+    healthCheckPath: /healthz
+    disk:
+      name: occult-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: "3.11.11"
+      - key: PAID_DEV_UNLOCK
+        value: "false"
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:////data/occult_chart.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: XAI_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

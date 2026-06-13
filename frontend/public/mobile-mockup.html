@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta name="description" content="Occult Forge — premium mobile branding mockup" />
+  <title>Occult Forge — Mobile Brand Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forge-black: #0A0A0B;
+      --charcoal: #1C2526;
+      --gold: #C8A03A;
+      --gold-bright: #E0BC5A;
+      --crimson: #B22222;
+      --blood: #8B0000;
+      --silver: #A8A8A8;
+      --earth: #4B3427;
+      --light: #F5F5F5;
+      --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+      --font-display: "Cinzel", Georgia, serif;
+      --phone-w: 390px;
+      --phone-h: 844px;
+      --radius: 14px;
+      --radius-sm: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: #050506;
+      color: var(--light);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .stage {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 0.75rem 1.25rem;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(178, 34, 34, 0.14), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(200, 160, 58, 0.08), transparent 50%),
+        var(--forge-black);
+    }
+
+    .stage-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver);
+      opacity: 0.65;
+      margin-bottom: 0.55rem;
+    }
+
+    .phone {
+      width: min(var(--phone-w), 100vw - 1.5rem);
+      height: min(var(--phone-h), calc(100vh - 5rem));
+      max-height: 844px;
+      border-radius: 36px;
+      border: 1px solid rgba(168, 168, 168, 0.18);
+      background: var(--forge-black);
+      box-shadow:
+        0 0 0 1px rgba(200, 160, 58, 0.06),
+        0 24px 80px rgba(0, 0, 0, 0.75),
+        0 0 60px rgba(178, 34, 34, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 35% at 50% 0%, rgba(200, 160, 58, 0.07), transparent 60%),
+        radial-gradient(ellipse 50% 30% at 10% 85%, rgba(139, 0, 0, 0.12), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .phone > * { position: relative; z-index: 1; }
+
+    .status-bar {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.55rem 1.35rem 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--light);
+      letter-spacing: 0.02em;
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+      opacity: 0.9;
+    }
+
+    .status-icons span {
+      width: 14px;
+      height: 8px;
+      border: 1.5px solid var(--light);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .status-icons span::after {
+      content: "";
+      position: absolute;
+      inset: 1px 3px 1px 1px;
+      background: var(--light);
+      border-radius: 1px;
+    }
+
+    .screen {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 0 0.85rem 0.65rem;
+      scrollbar-width: none;
+    }
+
+    .screen::-webkit-scrollbar { display: none; }
+
+    .app-header {
+      text-align: center;
+      padding: 0.2rem 0 0.65rem;
+      border-bottom: 1px solid rgba(168, 168, 168, 0.1);
+      margin-bottom: 0.65rem;
+    }
+
+    .brand-mark {
+      width: 2.1rem;
+      height: 2.1rem;
+      margin: 0 auto 0.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 160, 58, 0.45);
+      background:
+        radial-gradient(circle at 35% 30%, rgba(224, 188, 90, 0.35), transparent 45%),
+        linear-gradient(145deg, rgba(75, 52, 39, 0.9), rgba(28, 37, 38, 0.95));
+      box-shadow: 0 0 18px rgba(200, 160, 58, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-mark svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.4;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 24px rgba(200, 160, 58, 0.35);
+    }
+
+    .app-tagline {
+      margin-top: 0.3rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    .greeting-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .greeting-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--light);
+      line-height: 1.25;
+    }
+
+    .greeting-sub {
+      margin-top: 0.2rem;
+      font-size: 0.74rem;
+      color: var(--silver);
+      line-height: 1.35;
+    }
+
+    .seal-badge {
+      flex: 0 0 auto;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(200, 160, 58, 0.35);
+      background: rgba(200, 160, 58, 0.08);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      white-space: nowrap;
+    }
+
+    .card {
+      background: var(--charcoal);
+      border: 1px solid rgba(168, 168, 168, 0.12);
+      border-radius: var(--radius);
+      padding: 0.7rem 0.75rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 160, 58, 0.35), transparent);
+      opacity: 0.6;
+    }
+
+    .card-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 0.55rem;
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.35rem;
+    }
+
+    .chart-token {
+      aspect-ratio: 1;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(168, 168, 168, 0.14);
+      background: rgba(10, 10, 11, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      padding: 0.35rem 0.25rem;
+      text-align: center;
+    }
+
+    .chart-token strong {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .chart-token span {
+      font-size: 0.52rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--silver);
+      line-height: 1.2;
+    }
+
+    .chart-token--crimson {
+      border-color: rgba(178, 34, 34, 0.4);
+      box-shadow: inset 0 0 12px rgba(139, 0, 0, 0.15);
+    }
+
+    .chart-token--crimson strong { color: #E06060; }
+
+    .chart-token--earth {
+      border-color: rgba(75, 52, 39, 0.65);
+      background: rgba(75, 52, 39, 0.2);
+    }
+
+    .timing-card {
+      border-color: rgba(178, 34, 34, 0.22);
+      box-shadow: 0 0 20px rgba(139, 0, 0, 0.08);
+    }
+
+    .timing-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .timing-date {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--light);
+    }
+
+    .timing-pill {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(178, 34, 34, 0.18);
+      border: 1px solid rgba(178, 34, 34, 0.45);
+      color: #E87878;
+    }
+
+    .timing-body {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--silver);
+      margin-bottom: 0.6rem;
+    }
+
+    .timing-body em {
+      font-style: normal;
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .timing-bar {
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(75, 52, 39, 0.6);
+      overflow: hidden;
+    }
+
+    .timing-bar-fill {
+      height: 100%;
+      width: 72%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blood), var(--crimson), var(--gold));
+      box-shadow: 0 0 10px rgba(178, 34, 34, 0.5);
+    }
+
+    .timing-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.4rem;
+      font-size: 0.62rem;
+      color: var(--silver);
+      opacity: 0.85;
+    }
+
+    .insight-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .mini-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(168, 168, 168, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.7rem;
+    }
+
+    .mini-card h3 {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 0.35rem;
+    }
+
+    .mini-card p {
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: var(--light);
+    }
+
+    .mini-card p strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .dock {
+      flex: 0 0 auto;
+      padding: 0.5rem 0.85rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(180deg, transparent, rgba(10, 10, 11, 0.92) 25%);
+      border-top: 1px solid rgba(168, 168, 168, 0.08);
+    }
+
+    .cta-zero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--forge-black);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, transparent 38%),
+        linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 45%, #A8842E 100%);
+      box-shadow:
+        0 0 0 1px rgba(200, 160, 58, 0.5),
+        0 4px 24px rgba(200, 160, 58, 0.35),
+        0 0 40px rgba(200, 160, 58, 0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .cta-zero:active {
+      transform: scale(0.98);
+    }
+
+    .cta-zero svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      stroke: var(--forge-black);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .share-note {
+      margin-top: 0.65rem;
+      text-align: center;
+      font-size: 0.68rem;
+      color: var(--silver);
+      opacity: 0.65;
+      max-width: 22rem;
+      line-height: 1.45;
+    }
+
+    .share-note a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .share-note a:hover { text-decoration: underline; }
+
+    @media (max-width: 420px) {
+      .stage { padding: 0; }
+      .stage-label, .share-note { display: none; }
+      .phone {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <p class="stage-label">Occult Forge · Brand Preview</p>
+
+    <div class="phone" role="img" aria-label="Occult Forge mobile app mockup">
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="screen">
+        <header class="app-header">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M8 8l4-4 4 4M8 16l4 4 4-4"/></svg>
+          </div>
+          <h1 class="app-title">Occult Forge</h1>
+          <p class="app-tagline">Forge Your Sovereignty</p>
+        </header>
+
+        <div class="greeting-row">
+          <div>
+            <h2 class="greeting-name">Seeker</h2>
+            <p class="greeting-sub">Sealed chart · Life path <strong style="color:var(--gold)">9</strong></p>
+          </div>
+          <span class="seal-badge">Sealed</span>
+        </div>
+
+        <section class="card" aria-label="Personalized chart dashboard">
+          <p class="card-label">Your imprint</p>
+          <div class="chart-grid">
+            <div class="chart-token">
+              <strong>LP 9</strong>
+              <span>Numerology</span>
+            </div>
+            <div class="chart-token chart-token--earth">
+              <strong>戊辰</strong>
+              <span>BaZi day</span>
+            </div>
+            <div class="chart-token chart-token--crimson">
+              <strong>♄</strong>
+              <span>Karmic</span>
+            </div>
+            <div class="chart-token">
+              <strong>♓</strong>
+              <span>Rising</span>
+            </div>
+            <div class="chart-token">
+              <strong>☉ ♌</strong>
+              <span>Sun sign</span>
+            </div>
+            <div class="chart-token">
+              <strong>☽ ♋</strong>
+              <span>Moon</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card timing-card" aria-label="Daily timing">
+          <div class="timing-head">
+            <span class="timing-date">Thursday · Jun 11, 2026</span>
+            <span class="timing-pill">High friction</span>
+          </div>
+          <p class="timing-body">
+            Universal territory <em>11</em> — master vibration day. Your personal <em>7</em> seeks solitude; sky pushes public momentum. <strong style="color:var(--crimson)">Act before noon.</strong>
+          </p>
+          <div class="timing-bar" role="presentation"><div class="timing-bar-fill"></div></div>
+          <div class="timing-meta">
+            <span>You vs sky · 68%</span>
+            <span>Territory 11 · Day 7</span>
+          </div>
+        </section>
+
+        <div class="insight-strip">
+          <div class="mini-card">
+            <h3>Promote</h3>
+            <p>Write the legacy memo. <strong>Gold hour: 10:42</strong></p>
+          </div>
+          <div class="mini-card">
+            <h3>Avoid</h3>
+            <p>Reactive contracts until moon sets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dock">
+        <button type="button" class="cta-zero" aria-label="Chat with Zero">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat with Zero
+        </button>
+      </div>
+    </div>
+
+    <p class="share-note">
+      Share this preview: <a href="/mockup">/mockup</a> on Render ·
+      <a href="/">Open app</a>
+    </p>
+  </div>
+</body>
+</html>

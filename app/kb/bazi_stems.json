@@ -1,0 +1,12 @@
+{
+  "甲": {"pinyin": "Jia", "element": "Yang Wood", "image": "Tree — growth, initiative"},
+  "乙": {"pinyin": "Yi", "element": "Yin Wood", "image": "Flower — flexibility, detail"},
+  "丙": {"pinyin": "Bing", "element": "Yang Fire", "image": "Sun — visibility, expression"},
+  "丁": {"pinyin": "Ding", "element": "Yin Fire", "image": "Candle — insight, refinement"},
+  "戊": {"pinyin": "Wu", "element": "Yang Earth", "image": "Mountain — stability, structure"},
+  "己": {"pinyin": "Ji", "element": "Yin Earth", "image": "Soil — nurture, containment"},
+  "庚": {"pinyin": "Geng", "element": "Yang Metal", "image": "Sword — decision, boundary"},
+  "辛": {"pinyin": "Xin", "element": "Yin Metal", "image": "Jewel — precision, aesthetics"},
+  "壬": {"pinyin": "Ren", "element": "Yang Water", "image": "Ocean — movement, scope"},
+  "癸": {"pinyin": "Gui", "element": "Yin Water", "image": "Rain — intuition, depth"}
+}

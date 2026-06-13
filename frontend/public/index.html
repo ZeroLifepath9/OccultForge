@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>Occult Forge — Your Imprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=DM+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css?v=156" />
+  <style>
+    /* Critical seal layout — must not depend on cached stylesheet */
+    .seal-stack .seal-hero-block .seal-main-row {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
+      gap: 0.4rem;
+      align-items: stretch !important;
+      min-height: 0 !important;
+    }
+    .seal-stack .seal-right-stack {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.08rem !important;
+      height: 100% !important;
+      min-height: 0 !important;
+    }
+    .seal-stack .seal-side-col {
+      height: 100% !important;
+      min-height: 0 !important;
+    }
+    /* Flex allocations for right column children to control heights per layout request:
+       smaller for Zero Depth + Call (so combined don't go past left Sky section),
+       larger for Numerology and Bazi (taller only). */
+    .seal-stack .seal-right-stack .zero-depth-token-wrapper {
+      flex: 0.5 0 auto !important; /* current short height, full width */
+    }
+    .seal-stack .seal-right-stack .zero-test-prompt {
+      flex: 1.35 0 0% !important; /* a little shorter on the bottom; box ends where text ends */
+    }
+    .seal-stack .seal-right-stack .seal-panel--numerology {
+      flex: 1.3 0 0% !important; /* a little larger */
+    }
+    .seal-stack .seal-right-stack .seal-panel--bazi,
+    .seal-stack .seal-right-stack .seal-right-panel--bazi {
+      flex: 3.15 0 0% !important; /* receives the small trimmed space from Challenge to Zero (a little taller for full display) */
+    }
+    .seal-stack .seal-tradition-trio {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.2rem;
+    }
+    .seal-stack .chart-flow--seal-daily {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .seal-stack .daily-energy-board--seal-square {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: start !important;
+    }
+    .seal-stack .daily-energy-day-field {
+      grid-column: 1 / -1 !important;
+    }
+    .seal-stack .daily-lens-row {
+      margin: 0.1rem 0 0.2rem !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+    }
+    .seal-stack .daily-lens-token {
+      font-size: 0.58rem !important;
+      padding: 0.12rem 0.6rem !important;
+      background: rgba(201, 162, 39, 0.08) !important;
+      border-color: var(--gold, #c9a227) !important;
+      color: var(--gold, #c9a227) !important;
+      font-weight: 600 !important;
+    }
+    .seal-stack .chaldean-totem {
+      border-color: #c9a227 !important;
+    }
+    .seal-stack .chaldean-totem .totem-being {
+      font-size: 0.55rem !important;
+      text-align: center !important;
+      line-height: 1.1 !important;
+      display: block !important;
+    }
+    header h1 {
+      color: #ffd700;
+      text-shadow: 0 0 20px rgba(200, 160, 58, 0.38);
+    }
+
+    .seal-stack .seal-token-row--square {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.4rem;
+    }
+    .bazi-frame-title {
+      margin: 0 !important;
+      text-align: center !important;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #d4846a;
+    }
+    .bazi-modal-expand-row {
+      display: flex !important;
+      justify-content: flex-end !important;
+    }
+    .bazi-modal-insight-token {
+      width: 5.25rem !important;
+      aspect-ratio: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0.35rem 0.4rem !important;
+      border-radius: 8px !important;
+      border: 1px solid rgba(196, 92, 72, 0.5) !important;
+      background: rgba(196, 92, 72, 0.06) !important;
+      font-size: 0.62rem !important;
+      line-height: 1.25 !important;
+      color: #d4846a !important;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .seal-stack .seal-hero-block .seal-main-row {
+        grid-template-columns: 1fr !important;
+        min-height: 0;
+      }
+      .seal-stack .daily-energy-board--seal-square {
+        grid-template-columns: 1fr !important;
+      }
+      .seal-stack .seal-token-row--square {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Occult Forge</h1>
+    <p class="tagline">Discover the imprint your birth left on this world — western and eastern lights.</p>
+    <p class="tagline-sub">Seek the knowledge the Elites have hoarded and hidden for thousands of years.</p>
+    <p id="auth-user" class="auth-user hidden"></p>
+    <div id="account-tools" class="account-tools hidden">
+      <button type="button" id="reset-chart" class="btn-ghost">Reset chart</button>
+      <button type="button" id="delete-account" class="btn-ghost">Delete account</button>
+      <button type="button" id="sign-out" class="btn-ghost">Sign out</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="landing" class="auth-gate" aria-label="Occult Forge entry">
+      <div class="auth-gate-hero">
+        <h1 class="auth-gate-title">Occult Forge</h1>
+        <p class="auth-gate-subtitle">Forge Your Sovereignty</p>
+        <p class="auth-gate-lead">
+          Occult Forge arms everyday people with the practical esoteric tools and ancient knowledge once reserved for elites —
+          personalized charts, precise timing, energetic compatibility, and real-world application for wealth, legacy, and impact.
+        </p>
+        <p class="auth-gate-matrix">The matrix breaks when knowledge is set free.</p>
+        <button type="button" class="auth-gate-scroll" id="landing-enter" aria-controls="wizard">
+          Enter
+          <span class="auth-gate-scroll-cue" aria-hidden="true">↓</span>
+        </button>
+        <p class="auth-gate-premium-note">Enter your birth story first — seal your chart with a free account. Premium tiers opening soon.</p>
+      </div>
+    </section>
+
+    <section id="wizard" class="panel hidden">
+      <h2>Begin your chart</h2>
+      <form id="seal-form">
+        <label>Name <input name="name" required value="" placeholder="Legal or birth name" autocomplete="name" /></label>
+        <label>Commonly known as <input name="commonly_known_as" value="" placeholder="Optional — nickname or public name" /></label>
+        <label>Birth date <input name="birth_date" type="date" required /></label>
+        <label>Birth time <input name="birth_time" type="time" required /></label>
+        <label>Place of Birth <input name="place_of_birth" required placeholder="City, region, country — e.g. New York, NY, USA" /></label>
+        <label>Gender (BaZi luck pillars)
+          <select name="gender" required>
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-primary">Enter Your Story</button>
+      </form>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="dashboard" class="panel hidden">
+      <div id="preview-seal-banner" class="preview-seal-banner hidden" role="region" aria-label="Seal your chart">
+        <p>Your chart is previewed locally. Create a free account to seal it and keep your daily reads.</p>
+        <button type="button" id="open-seal-modal" class="btn-primary btn-enter">Seal your chart</button>
+      </div>
+      <div class="seal-header" aria-label="Seal at a glance">
+        <div class="seal-identity">
+          <div id="year-totem" class="totem-wrap totem-wrap--outline" aria-label="Year zodiac totem"></div>
+          <div class="seal-name-block">
+            <div class="seal-name-row">
+              <h2 id="welcome-name">Seeker</h2>
+              <span id="welcome-born-energy" class="seal-born-energy hidden"></span>
+              <span id="welcome-alias" class="welcome-alias-inline hidden"></span>
+              <button type="button" id="lens-toggle-token" class="lens-toggle-token" title="Toggle Eastern / Western lens">E</button>
+            </div>
+            <div class="seal-being-row">
+              <p id="seal-being-line" class="seal-being-line"></p>
+              <div id="seal-num-titles" class="seal-num-titles" aria-label="Numerology titles"></div>
+            </div>
+            <div id="seal-core-tags" class="seal-core-tags"></div>
+          </div>
+        </div>
+
+        <div class="seal-stack" aria-label="Sealed chart stack">
+          <div class="seal-hero-block" aria-label="Today's energy with BaZi and numerology">
+          <div class="seal-main-row">
+            <section class="seal-panel seal-panel--daily" aria-label="Daily Expression">
+              <div class="seal-panel-head">
+                <h4>Today's energy</h4>
+                <button type="button" id="load-daily" class="btn-ghost btn-ghost--compact">Refresh</button>
+              </div>
+              <!-- Prominent lens tab directly under Refresh. Click to flip Eastern Zodiac/Bazi display (right cell + name field) to Chaldean Astrology + Hermetic timing (pros/cons measured vs Chaldean, not Bazi). Re-click "Eastern Rising" to revert. -->
+              <div class="daily-lens-row">
+                <button type="button" id="daily-lens-token" class="daily-lens-token">Chaldean Astrology</button>
+              </div>
+              <p id="daily-meta" class="status seal-daily-meta"></p>
+              <div id="daily-chart-grid" class="chart-grid chart-grid--seal-daily"></div>
+              <article id="daily-narrative" class="daily-text daily-text--seal hidden"></article>
+            </section>
+
+            <div class="seal-side-col" aria-label="Seal soul charts">
+              <div class="seal-right-stack">
+                <!-- Consolidated Zero Depth token: contains Full Read, Wealth, Relationships, Karmic Debt as tabs inside.
+                     Single short wide token (quarter size, same width as Challenge/Num/Bazi below).
+                     Click opens tab selector; expand each individually from there. -->
+                <div class="zero-depth-token-wrapper">
+                  <button type="button" id="zero-depth-token" class="zero-depth-token">
+                    Zero Depth
+                  </button>
+                </div>
+
+                <!-- Challenge to Zero prompt box: the free past event test.
+                     Aligned to match ASCII position next to lower Sky/Scale.
+                     Compact, text-focused, minimal empty space. -->
+                <div id="zero-past-event-test" class="zero-test-prompt" aria-label="Challenge to Zero">
+                  <div class="zero-test-head">
+                    <h4>Challenge to Zero</h4>
+                    <span class="zero-test-tag">FREE • 3 ROUNDS</span>
+                  </div>
+                  <p class="zero-test-intro">Give a real past event and exact date. Zero reconstructs your chart for that time and explains in plain English how the occult forces align with what happened.</p>
+                  <div class="zero-test-form">
+                    <label class="zero-test-label">Date
+                      <input type="date" id="zero-test-date" required>
+                    </label>
+                    <label class="zero-test-label">Event
+                      <textarea id="zero-test-event" rows="2" placeholder="What happened..." required></textarea>
+                    </label>
+                  </div>
+                  <button type="button" id="zero-test-run" class="zero-test-btn">Run Free Test</button>
+                  <p class="zero-test-footnote">Free (3 rounds). Full power is premium.</p>
+                </div>
+
+                <section id="seal-numerology-frame" class="seal-panel seal-panel--numerology seal-right-panel seal-right-panel--numerology" aria-label="Occult Numerology">
+                  <div id="seal-numerology-body" class="seal-numerology-body"></div>
+                </section>
+
+                <section id="bazi-frame" class="bazi-frame seal-panel seal-panel--bazi seal-right-panel seal-right-panel--bazi" aria-label="BaZi Pillars">
+                  <button type="button" class="bazi-frame-open" id="bazi-frame-open-pillars" aria-haspopup="dialog">
+                    <h4 class="bazi-frame-title">BaZi Pillars</h4>
+                    <div class="bazi-compact-grid">
+                      <div id="bazi-compact-pillars" class="bazi-compact-pillars"></div>
+                      <div id="bazi-compact-luck" class="bazi-compact-luck-col"></div>
+                    </div>
+                  </button>
+                </section>
+
+                <div id="seal-tradition-tokens" class="seal-tradition-trio" role="group" aria-label="Vedic, Hellenistic, Financial Mundane"></div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <section id="zero-overview" class="zero-overview seal-panel seal-panel--zero hidden" hidden aria-label="Zero combined read">
+            <h3 class="zero-overview-title">Zero's read</h3>
+            <p class="zero-overview-sub">Matrix Decoder read across every sealed school — birth chart only, not today's sky. Tap a tradition box for depth in that language.</p>
+            <p class="zero-paywall-teaser" id="zero-daily-paywall-teaser">Daily Matrix read — full sky overlay on your seal — premium access opening soon.</p>
+            <p id="overview-meta" class="status"></p>
+            <article id="overview-narrative" class="zero-overview-text"></article>
+          </section>
+        </div>
+
+        <div id="relationships-frame-tab" class="relationships-frame-tab hidden" hidden aria-label="Relationship insight">
+          <header class="relationships-frame-tab-head">
+            <span class="relationships-frame-tab-title">Relationship / Legacy</span>
+            <button type="button" class="relationships-frame-tab-close" id="relationships-frame-close" aria-label="Close relationship insight">×</button>
+          </header>
+          <article id="relationships-frame-body" class="relationships-frame-tab-body"></article>
+        </div>
+        <div id="wealth-hub-panel-chart" class="hidden" hidden aria-hidden="true"></div>
+        <p id="wealth-frame-mission" class="hidden" hidden></p>
+        <p id="relationships-exterior-line" class="hidden" hidden></p>
+      </div>
+
+      <div id="chart-boxes" class="hidden" hidden aria-hidden="true"></div>
+    </section>
+
+    <section id="zero" class="panel hidden paid-hidden"></section>
+    <section id="location" class="panel hidden paid-hidden"></section>
+    <section id="chart" class="panel hidden paid-hidden"></section>
+    <section id="daily" class="panel hidden paid-hidden"></section>
+  </main>
+
+  <div id="chart-modal" class="chart-modal hidden" role="dialog" aria-modal="true" aria-labelledby="chart-modal-title" aria-hidden="true">
+    <div class="chart-modal-backdrop" data-close-modal></div>
+    <div class="chart-modal-sheet">
+      <header class="chart-modal-header">
+        <h3 id="chart-modal-title">Chart reading</h3>
+        <button type="button" id="chart-modal-close" class="chart-modal-close" aria-label="Close">×</button>
+      </header>
+      <article id="chart-modal-body" class="chart-modal-body"></article>
+    </div>
+  </div>
+
+  <div id="seal-modal" class="chart-modal hidden" role="dialog" aria-modal="true" aria-labelledby="seal-modal-title" aria-hidden="true">
+    <div class="chart-modal-backdrop" data-close-seal-modal></div>
+    <div class="chart-modal-sheet">
+      <header class="chart-modal-header">
+        <h3 id="seal-modal-title">Seal your chart</h3>
+        <button type="button" id="seal-modal-close" class="chart-modal-close" aria-label="Close">×</button>
+      </header>
+      <article class="chart-modal-body">
+        <p class="seal-modal-copy">Forge Your Sovereignty — create a free account to save your sealed chart. Premium counsel, rituals, and full daily overlay opening soon.</p>
+        <form id="seal-account-form" novalidate>
+          <label>Email <input name="email" type="email" required autocomplete="email" /></label>
+          <label>Password <input name="password" type="password" required minlength="8" autocomplete="new-password" /></label>
+          <button type="submit" class="btn-primary btn-enter">Create account &amp; seal</button>
+        </form>
+        <p id="seal-modal-status" class="status" role="status" aria-live="polite"></p>
+      </article>
+    </div>
+  </div>
+
+  <div id="bazi-insight-modal" class="chart-modal bazi-insight-modal hidden" role="dialog" aria-modal="true" aria-labelledby="bazi-insight-title" aria-hidden="true">
+    <div class="chart-modal-backdrop" data-close-bazi-insight></div>
+    <div class="chart-modal-sheet">
+      <header class="chart-modal-header">
+        <button type="button" id="bazi-insight-back" class="bazi-insight-back" aria-label="Back to chart">← Chart</button>
+        <h3 id="bazi-insight-title">BaZi full insight</h3>
+        <button type="button" id="bazi-insight-close" class="chart-modal-close" aria-label="Close">×</button>
+      </header>
+      <article id="bazi-insight-body" class="chart-modal-body"></article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span>Powered by Grok (xAI)</span>
+    <span>For reflection and entertainment — not medical or financial advice.</span>
+    <span id="build-stamp" class="build-stamp" hidden></span>
+  </footer>
+
+  <script src="/static/totems.svg.js?v=48"></script>
+  <script src="/static/chart-i18n.js?v=127"></script>
+  <script src="/static/chart-forge.js?v=127"></script>
+  <script src="/static/zodiac.js?v=127"></script>
+  <script src="/static/app.js?v=127"></script>
+</body>
+</html>

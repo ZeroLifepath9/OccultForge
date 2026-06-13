@@ -1,0 +1,21 @@
+[
+  {"name": "Apple", "founded": "1976-04-01", "hq_city": "Cupertino", "hq_state": "CA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Microsoft", "founded": "1975-04-04", "hq_city": "Redmond", "hq_state": "WA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Amazon", "founded": "1994-07-05", "hq_city": "Seattle", "hq_state": "WA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Google", "founded": "1998-09-04", "hq_city": "Mountain View", "hq_state": "CA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Meta", "founded": "2004-02-04", "hq_city": "Menlo Park", "hq_state": "CA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Tesla", "founded": "2003-07-01", "hq_city": "Austin", "hq_state": "TX", "timezone": "America/Chicago", "entity_type": "company"},
+  {"name": "Ford", "founded": "1903-06-16", "hq_city": "Detroit", "hq_state": "MI", "timezone": "America/Detroit", "entity_type": "company"},
+  {"name": "General Motors", "founded": "1908-09-16", "hq_city": "Detroit", "hq_state": "MI", "timezone": "America/Detroit", "entity_type": "company"},
+  {"name": "JPMorgan Chase", "founded": "1799-09-01", "hq_city": "New York", "hq_state": "NY", "timezone": "America/New_York", "entity_type": "company"},
+  {"name": "Goldman Sachs", "founded": "1869-01-01", "hq_city": "New York", "hq_state": "NY", "timezone": "America/New_York", "entity_type": "company"},
+  {"name": "Walmart", "founded": "1962-07-02", "hq_city": "Bentonville", "hq_state": "AR", "timezone": "America/Chicago", "entity_type": "company"},
+  {"name": "ExxonMobil", "founded": "1999-11-30", "hq_city": "Irving", "hq_state": "TX", "timezone": "America/Chicago", "entity_type": "company"},
+  {"name": "Boeing", "founded": "1916-07-15", "hq_city": "Arlington", "hq_state": "VA", "timezone": "America/New_York", "entity_type": "company"},
+  {"name": "Coca-Cola", "founded": "1892-01-29", "hq_city": "Atlanta", "hq_state": "GA", "timezone": "America/New_York", "entity_type": "company"},
+  {"name": "Nike", "founded": "1964-01-25", "hq_city": "Beaverton", "hq_state": "OR", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Starbucks", "founded": "1971-03-30", "hq_city": "Seattle", "hq_state": "WA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "Disney", "founded": "1923-10-16", "hq_city": "Burbank", "hq_state": "CA", "timezone": "America/Los_Angeles", "entity_type": "company"},
+  {"name": "IBM", "founded": "1911-06-16", "hq_city": "Armonk", "hq_state": "NY", "timezone": "America/New_York", "entity_type": "company"},
+  {"name": "xAI", "founded": "2023-03-09", "hq_city": "Palo Alto", "hq_state": "CA", "timezone": "America/Los_Angeles", "entity_type": "company"}
+]

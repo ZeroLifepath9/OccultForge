@@ -1,0 +1,410 @@
+[
+  {
+    "code": "AL",
+    "name": "Alabama",
+    "founded": "1819-12-14",
+    "capital": "Montgomery",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "AK",
+    "name": "Alaska",
+    "founded": "1959-01-03",
+    "capital": "Juneau",
+    "timezone": "America/Anchorage",
+    "entity_type": "state"
+  },
+  {
+    "code": "AZ",
+    "name": "Arizona",
+    "founded": "1912-02-14",
+    "capital": "Phoenix",
+    "timezone": "America/Phoenix",
+    "entity_type": "state"
+  },
+  {
+    "code": "AR",
+    "name": "Arkansas",
+    "founded": "1836-06-15",
+    "capital": "Little Rock",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "CA",
+    "name": "California",
+    "founded": "1850-09-09",
+    "capital": "Sacramento",
+    "timezone": "America/Los_Angeles",
+    "entity_type": "state"
+  },
+  {
+    "code": "CO",
+    "name": "Colorado",
+    "founded": "1876-08-01",
+    "capital": "Denver",
+    "timezone": "America/Denver",
+    "entity_type": "state"
+  },
+  {
+    "code": "CT",
+    "name": "Connecticut",
+    "founded": "1788-01-09",
+    "capital": "Hartford",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "DE",
+    "name": "Delaware",
+    "founded": "1787-12-07",
+    "capital": "Dover",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "FL",
+    "name": "Florida",
+    "founded": "1845-03-03",
+    "capital": "Tallahassee",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "GA",
+    "name": "Georgia",
+    "founded": "1788-01-02",
+    "capital": "Atlanta",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "HI",
+    "name": "Hawaii",
+    "founded": "1959-08-21",
+    "capital": "Honolulu",
+    "timezone": "Pacific/Honolulu",
+    "entity_type": "state"
+  },
+  {
+    "code": "ID",
+    "name": "Idaho",
+    "founded": "1890-07-03",
+    "capital": "Boise",
+    "timezone": "America/Boise",
+    "entity_type": "state"
+  },
+  {
+    "code": "IL",
+    "name": "Illinois",
+    "founded": "1818-12-03",
+    "capital": "Springfield",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "IN",
+    "name": "Indiana",
+    "founded": "1816-12-11",
+    "capital": "Indianapolis",
+    "timezone": "America/Indiana/Indianapolis",
+    "entity_type": "state"
+  },
+  {
+    "code": "IA",
+    "name": "Iowa",
+    "founded": "1846-12-28",
+    "capital": "Des Moines",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "KS",
+    "name": "Kansas",
+    "founded": "1861-01-29",
+    "capital": "Topeka",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "KY",
+    "name": "Kentucky",
+    "founded": "1792-06-01",
+    "capital": "Frankfort",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "LA",
+    "name": "Louisiana",
+    "founded": "1812-04-30",
+    "capital": "Baton Rouge",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "ME",
+    "name": "Maine",
+    "founded": "1820-03-15",
+    "capital": "Augusta",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "MD",
+    "name": "Maryland",
+    "founded": "1788-04-28",
+    "capital": "Annapolis",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "MA",
+    "name": "Massachusetts",
+    "founded": "1788-02-06",
+    "capital": "Boston",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "MI",
+    "name": "Michigan",
+    "founded": "1837-01-26",
+    "capital": "Lansing",
+    "timezone": "America/Detroit",
+    "entity_type": "state"
+  },
+  {
+    "code": "MN",
+    "name": "Minnesota",
+    "founded": "1858-05-11",
+    "capital": "Saint Paul",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "MS",
+    "name": "Mississippi",
+    "founded": "1817-12-10",
+    "capital": "Jackson",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "MO",
+    "name": "Missouri",
+    "founded": "1821-08-10",
+    "capital": "Jefferson City",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "MT",
+    "name": "Montana",
+    "founded": "1889-11-08",
+    "capital": "Helena",
+    "timezone": "America/Denver",
+    "entity_type": "state"
+  },
+  {
+    "code": "NE",
+    "name": "Nebraska",
+    "founded": "1867-03-01",
+    "capital": "Lincoln",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "NV",
+    "name": "Nevada",
+    "founded": "1864-10-31",
+    "capital": "Carson City",
+    "timezone": "America/Los_Angeles",
+    "entity_type": "state"
+  },
+  {
+    "code": "NH",
+    "name": "New Hampshire",
+    "founded": "1788-06-21",
+    "capital": "Concord",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "NJ",
+    "name": "New Jersey",
+    "founded": "1787-12-18",
+    "capital": "Trenton",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "NM",
+    "name": "New Mexico",
+    "founded": "1912-01-06",
+    "capital": "Santa Fe",
+    "timezone": "America/Denver",
+    "entity_type": "state"
+  },
+  {
+    "code": "NY",
+    "name": "New York",
+    "founded": "1788-07-26",
+    "capital": "Albany",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "NC",
+    "name": "North Carolina",
+    "founded": "1789-11-21",
+    "capital": "Raleigh",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "ND",
+    "name": "North Dakota",
+    "founded": "1889-11-02",
+    "capital": "Bismarck",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "OH",
+    "name": "Ohio",
+    "founded": "1803-03-01",
+    "capital": "Columbus",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "OK",
+    "name": "Oklahoma",
+    "founded": "1907-11-16",
+    "capital": "Oklahoma City",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "OR",
+    "name": "Oregon",
+    "founded": "1859-02-14",
+    "capital": "Salem",
+    "timezone": "America/Los_Angeles",
+    "entity_type": "state"
+  },
+  {
+    "code": "PA",
+    "name": "Pennsylvania",
+    "founded": "1787-12-12",
+    "capital": "Harrisburg",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "RI",
+    "name": "Rhode Island",
+    "founded": "1790-05-29",
+    "capital": "Providence",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "SC",
+    "name": "South Carolina",
+    "founded": "1788-05-23",
+    "capital": "Columbia",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "SD",
+    "name": "South Dakota",
+    "founded": "1889-11-02",
+    "capital": "Pierre",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "TN",
+    "name": "Tennessee",
+    "founded": "1796-06-01",
+    "capital": "Nashville",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "TX",
+    "name": "Texas",
+    "founded": "1845-12-29",
+    "capital": "Austin",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "UT",
+    "name": "Utah",
+    "founded": "1896-01-04",
+    "capital": "Salt Lake City",
+    "timezone": "America/Denver",
+    "entity_type": "state"
+  },
+  {
+    "code": "VT",
+    "name": "Vermont",
+    "founded": "1791-03-04",
+    "capital": "Montpelier",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "VA",
+    "name": "Virginia",
+    "founded": "1788-06-25",
+    "capital": "Richmond",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "WA",
+    "name": "Washington",
+    "founded": "1889-11-11",
+    "capital": "Olympia",
+    "timezone": "America/Los_Angeles",
+    "entity_type": "state"
+  },
+  {
+    "code": "WV",
+    "name": "West Virginia",
+    "founded": "1863-06-20",
+    "capital": "Charleston",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  },
+  {
+    "code": "WI",
+    "name": "Wisconsin",
+    "founded": "1848-05-29",
+    "capital": "Madison",
+    "timezone": "America/Chicago",
+    "entity_type": "state"
+  },
+  {
+    "code": "WY",
+    "name": "Wyoming",
+    "founded": "1890-07-10",
+    "capital": "Cheyenne",
+    "timezone": "America/Denver",
+    "entity_type": "state"
+  },
+  {
+    "code": "DC",
+    "name": "District of Columbia",
+    "founded": "1790-07-16",
+    "capital": "Washington",
+    "timezone": "America/New_York",
+    "entity_type": "state"
+  }
+]

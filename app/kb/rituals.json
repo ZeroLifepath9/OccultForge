@@ -1,0 +1,72 @@
+[
+  {
+    "id": "wood_dawn_breath",
+    "title": "Wood — Dawn breath alignment",
+    "tags": ["element:wood"],
+    "steps": [
+      "Face east at first light for nine measured breaths.",
+      "Hold intention on growth without forcing outcomes.",
+      "Write one sentence of what you will nurture today."
+    ]
+  },
+  {
+    "id": "fire_candle_focus",
+    "title": "Fire — Single-flame focus",
+    "tags": ["element:fire"],
+    "steps": [
+      "Light one candle at the hour of action.",
+      "Name the one task that must not be divided.",
+      "Extinguish with gratitude — do not blow in frustration."
+    ]
+  },
+  {
+    "id": "water_moon_cup",
+    "title": "Water — Moon cup offering",
+    "tags": ["element:water"],
+    "steps": [
+      "Fill a cup with still water before sleep.",
+      "Whisper what you are willing to release.",
+      "Pour out at dawn; do not drink this cup."
+    ]
+  },
+  {
+    "id": "metal_boundary_ring",
+    "title": "Metal — Boundary ring",
+    "tags": ["element:metal"],
+    "steps": [
+      "Trace a circle on paper with a metal pen.",
+      "Inside: what is yours to protect. Outside: what is not.",
+      "Carry the paper folded until the hour passes."
+    ]
+  },
+  {
+    "id": "earth_stone_anchor",
+    "title": "Earth — Stone anchor",
+    "tags": ["element:earth"],
+    "steps": [
+      "Hold a stone in the left hand for the length of one song.",
+      "Breathe into the belly; let the shoulders drop.",
+      "Place the stone where you work — it marks stable ground."
+    ]
+  },
+  {
+    "id": "jupiter_expansion_lamp",
+    "title": "Jupiter — Thursday lamp",
+    "tags": ["planet:jupiter"],
+    "steps": [
+      "On Thursday, light a yellow or gold lamp for twenty-seven minutes.",
+      "Offer thanks for one teaching received.",
+      "Give something small away without expectation."
+    ]
+  },
+  {
+    "id": "saturn_discipline_hour",
+    "title": "Saturn — Discipline hour",
+    "tags": ["planet:saturn"],
+    "steps": [
+      "Choose one uncomfortable task; begin at the top of the hour.",
+      "Work in silence for twenty-five minutes.",
+      "Stop on time — Saturn rewards boundaries, not exhaustion."
+    ]
+  }
+]
